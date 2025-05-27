@@ -506,4 +506,7 @@
     margin: 0 auto;
     display: block;
   }
+  .about-hero img{
+    width: 100%;
+  }
 }
