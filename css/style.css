@@ -194,7 +194,14 @@ nav {
   height: auto;
   object-fit: cover;
 }
-
+/* Thêm vào cuối file style.css */
+.banner-image {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+.banner-image.fading {
+  opacity: 0;
+}
 /* Nút chuyển slide */
 .prev,
 .next {
