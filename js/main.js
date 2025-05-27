@@ -26,6 +26,11 @@ if (imgEl) {
   });
 
   showSlide(0);
+
+  // Tự động chuyển slide mỗi 4 giây
+  setInterval(() => {
+    showSlide(slideIndex + 1);
+  }, 4000);
 }
 
 
@@ -64,4 +69,9 @@ document.querySelectorAll('.has-submenu > a').forEach(link => {
       parent.classList.toggle('open');
     }
   });
+});
+
+slides.forEach(src => {
+  const img = new Image();
+  img.src = src;
 });
