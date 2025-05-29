@@ -75,3 +75,76 @@ slides.forEach(src => {
   const img = new Image();
   img.src = src;
 });
+
+
+// khóa học
+
+  let quantity = 1;
+  const qtyDisplay = document.getElementById("qty");
+
+  function increase() {
+    quantity++;
+    qtyDisplay.textContent = quantity;
+  }
+
+  function decrease() {
+    if (quantity > 1) {
+      quantity--;
+      qtyDisplay.textContent = quantity;
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const mainImage = document.getElementById('mainImage');
+  const thumbs = document.querySelectorAll('.thumb');
+  const thumbSlider = document.getElementById('thumbSlider');
+  const prevBtn = document.querySelector('.thumb-prev');
+  const nextBtn = document.querySelector('.thumb-next');
+
+  let currentThumb = 0;
+
+  // Click vào ảnh nhỏ đổi ảnh lớn
+  thumbs.forEach((thumb, i) => {
+    thumb.addEventListener('click', () => {
+      mainImage.src = thumb.src;
+      thumbs.forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+      currentThumb = i;
+    });
+  });
+
+  // Chuyển slider nhỏ sang trái/phải
+  prevBtn.addEventListener('click', () => {
+    thumbSlider.scrollBy({ left: -80, behavior: 'smooth' });
+  });
+  nextBtn.addEventListener('click', () => {
+    thumbSlider.scrollBy({ left: 80, behavior: 'smooth' });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+  const underline = document.querySelector('.tab-underline');
+
+  function updateUnderline() {
+    const activeBtn = document.querySelector('.tab-btn.active');
+    if (activeBtn && underline) {
+      underline.style.width = activeBtn.offsetWidth + 'px';
+      underline.style.transform = `translateX(${activeBtn.offsetLeft}px)`;
+    }
+  }
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabContents.forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+      document.getElementById(this.dataset.tab).classList.add('active');
+      updateUnderline();
+    });
+  });
+
+  updateUnderline();
+  window.addEventListener('resize', updateUnderline);
+});

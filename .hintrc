@@ -15,8 +15,16 @@
       "default",
       {
         "ignore": [
-          "-webkit-overflow-scrolling"
+          "-webkit-overflow-scrolling",
+          "scrollbar-width",
+          "scrollbar-width: none"
         ]
+      }
+    ],
+    "axe/structure": [
+      "default",
+      {
+        "listitem": "off"
       }
     ]
   }
