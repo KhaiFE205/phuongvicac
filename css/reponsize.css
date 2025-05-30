@@ -510,3 +510,163 @@
     width: 100%;
   }
 }
+
+
+
+
+
+@media (max-width: 1200px) {
+  .banchay-list1 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .banchay-list1 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .banchay-list1 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 0 2px; /* Thêm khoảng cách nhỏ hai bên cho grid */
+  }
+  .banchay-item1 {
+    width: 100%;    /* Đảm bảo item co giãn theo cột */
+    max-width: 180px; /* Giới hạn chiều rộng tối đa cho item nhỏ lại */
+    margin: 0 auto;   /* Căn giữa nếu item nhỏ hơn cột */
+  }
+}
+
+@media (max-width: 700px) {
+  .khoahoc-sort .sort-radio-group {
+    display: none;
+  }
+  .khoahoc-sort .sort-select {
+    display: inline-block;
+    padding: 4px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #232323;
+    background: #fafafa;
+    outline: none;
+    margin-left: 8px;
+  }
+  .thumbnail-slider-wrapper {
+    padding: 0 16px; /* Thêm khoảng cách hai bên */
+    max-width: 100%;
+  }
+  .thumbnail-slider {
+    gap: 8px; /* Giảm khoảng cách giữa các ảnh nhỏ */
+    max-width: 100%;
+  }
+  .thumbnail-slider img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 700px) {
+  .khoahoc-sort .sort-radio-group { display: none; }
+  .sort-dropdown { display: inline-block; }
+}
+
+
+
+
+@media (max-width: 700px) {
+  .course-container {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 12px; /* Tăng đều nếu muốn khoảng cách lớn hơn */
+  }
+  .main-image-wrapper,
+  .course-left, .course-right {
+    width: 100%;
+    max-width: 100%;
+  }
+  .main-image {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    display: block;
+  }
+  .thumbnail-slider-wrapper {
+    padding: 0; /* Đã có padding ở .course-container rồi */
+    max-width: 100%;
+  }
+  .course-right {
+    padding: 0;
+    margin-top: 12px;
+    text-align: left;
+  }
+  .quantity {
+    margin: 12px 0;
+  }
+  .add-cart {
+    width: 100%;
+    font-size: 12px;
+    padding: 12px 0;
+    border-radius: 24px;
+    margin-bottom: 12px;
+  }
+  .phone-order {
+    font-size: 0.98em;
+    margin-bottom: 12px;
+  }
+  /* Nút tròn nổi bên phải */
+  .zalo-btn, .scroll-top-btn {
+    position: fixed;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+    background: #a6c25a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  .zalo-btn {
+    bottom: 80px;
+  }
+  .scroll-top-btn {
+    bottom: 24px;
+    background: #7ca23a;
+  }
+}
+
+@media (max-width: 700px) {
+  .course-description,
+  .course-right,
+  .desc-list,
+  .desc-list li,
+  .course-right p {
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    margin-bottom: 10px;
+  }
+  .course-right b,
+  .desc-list b {
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+ .tab-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .tab-content h3 {
+    font-size: 14px;
+  }
+  .tab-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+}

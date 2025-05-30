@@ -148,3 +148,61 @@ document.addEventListener('DOMContentLoaded', function() {
   updateUnderline();
   window.addEventListener('resize', updateUnderline);
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Xem thêm/Đóng cho sản phẩm bán chạy
+  const moreBtn = document.querySelector('.tintuc-more-btn');
+  const closeBtn = document.querySelector('.tintuc-close-btn');
+  const hiddenItems = document.querySelectorAll('.tintuc-item.hidden');
+
+  if (moreBtn && closeBtn && hiddenItems.length > 0) {
+    moreBtn.addEventListener('click', function () {
+      hiddenItems.forEach(item => item.style.display = 'block');
+      moreBtn.style.display = 'none';
+      closeBtn.style.display = 'inline-block';
+    });
+
+    closeBtn.addEventListener('click', function () {
+      hiddenItems.forEach(item => item.style.display = '');
+      moreBtn.style.display = 'inline-block';
+      closeBtn.style.display = 'none';
+    });
+  }
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var dropdown = document.querySelector('.sort-dropdown');
+  if (!dropdown) return;
+  var toggle = dropdown.querySelector('.dropdown-toggle');
+  var menu = dropdown.querySelector('.dropdown-menu');
+  var hiddenInput = dropdown.querySelector('input[type="hidden"]');
+  var items = menu.querySelectorAll('li');
+
+  // Toggle menu
+  toggle.onclick = function(e) {
+    dropdown.classList.toggle('open');
+  };
+
+  // Click outside to close
+  document.addEventListener('click', function(e) {
+    if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
+  });
+
+  // Select item
+  items.forEach(function(item) {
+    item.onclick = function() {
+      items.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+      toggle.textContent = item.textContent;
+      hiddenInput.value = item.getAttribute('data-value');
+      dropdown.classList.remove('open');
+    };
+  });
+
+  // Set default active
+  items[0].classList.add('active');
+});
